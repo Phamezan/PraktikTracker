@@ -1,0 +1,70 @@
+@model List<Company>
+@section Title {
+    @if (TempData["Message"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["Message"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+    <h1>Praktik</h1>
+}
+<a class="btn btn-primary mb-3 py-2" type="button" asp-controller="Praktik" asp-action="Add">Nyt
+    Firma</a>
+<table class="table ms-4">
+    <thead>
+        <tr>
+            <th scope="col">Hjemmeside</th>
+            <th scope="col">Beskrivelse</th>
+            <th class="text-nowrap" scope="col">Sendt via Email?</th>
+            <th class="text-nowrap" scope="col">Har jeg sendt en mail?</th>
+            <th class="text-nowrap" scope="col">Dato på Email sendt</th>
+            <th class="text-nowrap" scope="col">Dato på followup</th>
+            <th scope="col">Svar</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Company company in Model)
+        {
+            <tr>
+                <td scope="row"><a href="@company.URL">@company.Name</a></td>
+                <td class="description-cell" scope="row" onclick="this.classList.toggle('expanded')">
+                    @company.Description
+                </td>
+                @if (company.SentViaWebsite == true)
+                {
+                    <td class="table-info text-md-center" scope="row">Nej</td>
+                }
+                else
+                {
+                    <td class="text-md-center table-info" scope="row">Ja</td>
+                }
+                @if (company.HasSentEmail == true)
+                {
+                    <td class="table-success text-md-center" scope=row">Ja</td>
+                }
+                else
+                {
+                    <td class="table-danger text-md-center" scope=row">Nej</td>
+                }
+                <td scope="row">@company.EmailSent</td>
+                <td scope="row">@company.FollowUpDate</td>
+                @if (company.Answer == Answer.Interesseret)
+                {
+                    <td class="table-success" scope="row" style="color: green;">@company.Answer</td>
+                }
+                else if (company.Answer == Answer.Nej_Tak)
+                {
+                    <td class="table-danger" scope="row" style="color: red;">@company.Answer</td>
+                }
+                else if (company.Answer == Answer.Ingen_svar)
+                {
+                    <td class="table-warning" scope="row">@company.Answer</td>
+                }
+                <td><button class="btn btn-secondary">Rediger</button></td>
+                <td><button class="btn btn-success">Forny</button></td>
+                <td><button class="btn btn-danger">Slet</button></td>
+            </tr>
+        }
+    </tbody>
+</table>
