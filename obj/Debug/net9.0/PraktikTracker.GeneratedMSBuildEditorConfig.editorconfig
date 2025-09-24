@@ -36,8 +36,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJha3Rpa1xBZGQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Pham2/Desktop/Programmering/PraktikTracker/Views/Praktik/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJha3Rpa1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Pham2/Desktop/Programmering/PraktikTracker/Views/Praktik/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJha3Rpa1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Pham2/Desktop/Programmering/PraktikTracker/Views/Praktik/_praktik.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJha3Rpa1xfcHJha3Rpay5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Pham2/Desktop/Programmering/PraktikTracker/Views/Shared/_ValidationScriptsPartial.cshtml]

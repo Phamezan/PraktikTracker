@@ -1,0 +1,53 @@
+@model Company
+
+<form asp-action="@(ViewBag.Mode == "Edit" ? "Edit" : "Add")" method="post">
+    @if (ViewBag.Mode == "Edit")
+    {
+        <input type="hidden" asp-for="Id" />
+    }
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label">Firma</label>
+        <input type="text" class="form-control" asp-for="Name" name="Name" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="URL" class="form-label">Hjemmeside</label>
+        <input type="url" class="form-control" asp-for="URL" name="URL" />
+        <span asp-validation-for="URL" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Description" class="form-label">Beskrivelse</label>
+        <textarea asp-for="Description" class="form-control" name="Description" rows="3"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <div class="mb-3 form-check">
+        <label class="form-check-label" asp-for="SentViaWebsite">Sendt via hjemmeside?</label>
+        <input type="checkbox" class="form-check-input" asp-for="SentViaWebsite" name="SentViaWebsite" />
+    </div>
+    <div class="mb-3 form-check">
+        <label class="form-check-label" asp-for="HasSentApplication">Har jeg sendt en ansøgning?</label>
+        <input type="checkbox" class="form-check-input" asp-for="HasSentApplication" name="HasSentEmail" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="EmailSent" class="form-label">Dato på Email sendt </label>
+        <input asp-for="EmailSent" type="date" class="form-control" name="EmailSent" />
+        <span asp-validation-for="EmailSent" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="FollowUpDate" class="form-label">Dato på followup </label>
+        <input asp-for="FollowUpDate" type="date" class="form-control" name="FollowUpDate" />
+        <span asp-validation-for="FollowUpDate" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label for="Answer" class="form-label">Svar</label>
+        <select name="Answer" class="form-select">
+            @foreach (var answer in Enum.GetValues(typeof(Answer)))
+            {
+                <option value="@((int)answer)" selected="@(Model.Answer == (Answer)answer)">@answer</option>
+            }
+        </select>
+        <span asp-validation-for="Answer" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Gem</button>
+    <a asp-action="Index" class="btn btn-secondary">Tilbage</a>
+</form>

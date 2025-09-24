@@ -22,10 +22,10 @@ namespace PraktikTracker.Data
                     Id = 1,
                     Name = "Hesehus",
                     URL = "https://www.hesehus.dk/karriere/praktik-og-studieprojekt",
-                    HasSentEmail = true,
+                    HasSentApplication = true,
                     Description = "",
                     EmailSent = new DateOnly(2025, 6, 23),
-                    Answer = Answer.Ingen_svar,
+                    Answer = Answer.Ingen_Svar,
                     SentViaWebsite = true,
                 },
                 new Company
@@ -33,10 +33,10 @@ namespace PraktikTracker.Data
                     Id = 2,
                     Name = "Vitec",
                     URL = "https://jobs.vitecsoftware.dk/jobs/1208909-praktikperiode-hos-vitec-software-group",
-                    HasSentEmail = true,
+                    HasSentApplication = true,
                     Description = "",
                     EmailSent = new DateOnly(2025, 6, 23),
-                    Answer = Answer.Ingen_svar,
+                    Answer = Answer.Ingen_Svar,
                     SentViaWebsite = true,
                 },
                 new Company
@@ -44,10 +44,10 @@ namespace PraktikTracker.Data
                     Id = 3,
                     Name = "Viking",
                     URL = "https://www.vikingsoftware.com/get-in-touch/",
-                    HasSentEmail = true,
+                    HasSentApplication = true,
                     Description = "Arbejder i mange sprog og frameworks som f.eks. C# og React",
                     EmailSent = new DateOnly(2025, 6, 23),
-                    Answer = Answer.Ingen_svar,
+                    Answer = Answer.Ingen_Svar,
                     SentViaWebsite = false,
                 }
             );

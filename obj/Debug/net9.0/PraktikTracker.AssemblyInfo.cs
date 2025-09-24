@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PraktikTracker")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3c23db44bf2f875b85678eec11a3d968650f945c")]
 [assembly: System.Reflection.AssemblyProductAttribute("PraktikTracker")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PraktikTracker")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

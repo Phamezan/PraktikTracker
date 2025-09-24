@@ -25,7 +25,8 @@ namespace PraktikTracker.Controllers
 
         public IActionResult Add()
         {
-            return View();
+            Company newCompany = new Company();
+            return View(newCompany);
         }
 
         [HttpPost]
@@ -34,8 +35,29 @@ namespace PraktikTracker.Controllers
             if (ModelState.IsValid)
             {
                 _services.AddCompany(company);
-                return RedirectToAction("Index");
                 ViewData["Message"] = "Firmaet er blevet tilføjet";
+                return RedirectToAction("Index");
+            }
+            return View(company);
+        }
+
+        public IActionResult Edit(int id)
+        {
+            var company = _services.GetCompanyById(id);
+            if (company == null)
+            {
+                return NotFound();
+            }
+            return View(company);
+        }
+        [HttpPost]
+        public IActionResult Edit(Company company)
+        {
+            if (ModelState.IsValid)
+            {
+                _services.UpdateCompany(company.Id);
+                ViewData["Message"] = "Firmaet er blevet opdateret";
+                return RedirectToAction("Index");
             }
             return View(company);
         }

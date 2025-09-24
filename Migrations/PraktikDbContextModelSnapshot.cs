@@ -37,13 +37,13 @@ namespace PraktikTracker.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateOnly>("EmailSent")
+                    b.Property<DateOnly?>("EmailSent")
                         .HasColumnType("date");
 
                     b.Property<DateOnly?>("FollowUpDate")
                         .HasColumnType("date");
 
-                    b.Property<bool>("HasSentEmail")
+                    b.Property<bool>("HasSentApplication")
                         .HasColumnType("bit");
 
                     b.Property<string>("Name")
@@ -68,8 +68,8 @@ namespace PraktikTracker.Migrations
                             Answer = 0,
                             Description = "",
                             EmailSent = new DateOnly(2025, 6, 23),
-                            FollowUpDate = new DateOnly(2025, 9, 29),
-                            HasSentEmail = true,
+                            FollowUpDate = new DateOnly(2025, 10, 4),
+                            HasSentApplication = true,
                             Name = "Hesehus",
                             SentViaWebsite = true,
                             URL = "https://www.hesehus.dk/karriere/praktik-og-studieprojekt"
@@ -80,8 +80,8 @@ namespace PraktikTracker.Migrations
                             Answer = 0,
                             Description = "",
                             EmailSent = new DateOnly(2025, 6, 23),
-                            FollowUpDate = new DateOnly(2025, 9, 29),
-                            HasSentEmail = true,
+                            FollowUpDate = new DateOnly(2025, 10, 4),
+                            HasSentApplication = true,
                             Name = "Vitec",
                             SentViaWebsite = true,
                             URL = "https://jobs.vitecsoftware.dk/jobs/1208909-praktikperiode-hos-vitec-software-group"
@@ -92,8 +92,8 @@ namespace PraktikTracker.Migrations
                             Answer = 0,
                             Description = "Arbejder i mange sprog og frameworks som f.eks. C# og React",
                             EmailSent = new DateOnly(2025, 6, 23),
-                            FollowUpDate = new DateOnly(2025, 9, 29),
-                            HasSentEmail = true,
+                            FollowUpDate = new DateOnly(2025, 10, 4),
+                            HasSentApplication = true,
                             Name = "Viking",
                             SentViaWebsite = false,
                             URL = "https://www.vikingsoftware.com/get-in-touch/"

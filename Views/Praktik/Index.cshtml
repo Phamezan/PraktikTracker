@@ -11,16 +11,17 @@
 }
 <a class="btn btn-primary mb-3 py-2" type="button" asp-controller="Praktik" asp-action="Add">Nyt
     Firma</a>
-<table class="table ms-4">
+<table class="table ms-4 table-fixed">
     <thead>
         <tr>
-            <th scope="col">Hjemmeside</th>
-            <th scope="col">Beskrivelse</th>
-            <th class="text-nowrap" scope="col">Sendt via Email?</th>
-            <th class="text-nowrap" scope="col">Har jeg sendt en mail?</th>
-            <th class="text-nowrap" scope="col">Dato på Email sendt</th>
-            <th class="text-nowrap" scope="col">Dato på followup</th>
-            <th scope="col">Svar</th>
+            <th scope="col" style="width: 10%;">Hjemmeside</th>
+            <th scope="col" style="width: 15%;">Beskrivelse</th>
+            <th class="text-nowrap" scope="col" style="width: 10%;">Sendt via Email?</th>
+            <th class="text-nowrap" scope="col" style="width: 20%;">Har jeg sendt en mail?</th>
+            <th class="text-nowrap" scope="col" style="width: 14%;">Dato på Email sendt</th>
+            <th class="text-nowrap" scope="col" style="width: 14%;">Dato på followup</th>
+            <th scope="col" style="width: 10%;">Svar</th>
+
         </tr>
     </thead>
     <tbody>
@@ -39,32 +40,48 @@
                 {
                     <td class="text-md-center table-info" scope="row">Ja</td>
                 }
-                @if (company.HasSentEmail == true)
+                @if (company.HasSentApplication == true)
                 {
-                    <td class="table-success text-md-center" scope=row">Ja</td>
+                    <td class="table-success text-md-center" scope="row">Ja</td>
                 }
                 else
                 {
-                    <td class="table-danger text-md-center" scope=row">Nej</td>
+                    <td class="table-danger text-md-center" scope="row">Nej</td>
                 }
-                <td scope="row">@company.EmailSent</td>
-                <td scope="row">@company.FollowUpDate</td>
+                <td class="text-center" scope="row">@company.EmailSent</td>
+                <td class="text-center" scope="row">@company.FollowUpDate</td>
                 @if (company.Answer == Answer.Interesseret)
                 {
-                    <td class="table-success" scope="row" style="color: green;">@company.Answer</td>
+                    <td class="table-success text-center" scope="row" style="color: green;">Interesseret</td>
                 }
-                else if (company.Answer == Answer.Nej_Tak)
+                else if (company.Answer == Answer.Afslag)
                 {
-                    <td class="table-danger" scope="row" style="color: red;">@company.Answer</td>
+                    <td class="table-danger text-center" scope="row" style="color: red;"><b>Afslag</b></td>
                 }
-                else if (company.Answer == Answer.Ingen_svar)
+                else if (company.Answer == Answer.Ingen_Svar)
                 {
-                    <td class="table-warning" scope="row">@company.Answer</td>
+                    <td class="table-warning text-center" scope="row">Ingen Svar</td>
                 }
-                <td><button class="btn btn-secondary">Rediger</button></td>
-                <td><button class="btn btn-success">Forny</button></td>
-                <td><button class="btn btn-danger">Slet</button></td>
+                <td>
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-secondary">Rediger</button>
+                        <button class="btn btn-success">Forny</button>
+                        <button class="btn btn-danger ">Slet</button>
+                    </div>
+                </td>
             </tr>
         }
     </tbody>
 </table>
+
+<style>
+    .table-fixed {
+        table-layout: fixed;
+    }
+
+    .table-fixed th,
+    .table-fixed td {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+</style>
